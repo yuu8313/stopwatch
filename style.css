@@ -88,6 +88,10 @@ body {
     margin-left: 10px;
 }
 
+.formatSelector {
+    background: rgba(255, 255, 255, 0.1);
+}
+
 .laps-container {
     margin-top: 20px;
     max-height: 200px;
