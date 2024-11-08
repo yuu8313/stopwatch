@@ -1,0 +1,134 @@
+:root {
+    --primary-bg: #1a1a1a;
+    --card-bg: rgba(255, 255, 255, 0.1);
+    --accent-color: #00a8ff;
+    --text-color: #ffffff;
+    --button-hover: rgba(255, 255, 255, 0.2);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, sans-serif;
+    background: var(--primary-bg);
+    color: var(--text-color);
+    min-height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.container {
+    width: 100%;
+    max-width: 600px;
+    padding: 20px;
+}
+
+.stopwatch-card {
+    background: var(--card-bg);
+    backdrop-filter: blur(10px);
+    border-radius: 20px;
+    padding: 30px;
+    box-shadow: 0 8px 32px rgba(0, 0, 0, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.1);
+}
+
+.time-display {
+    font-size: 3.5rem;
+    font-weight: 700;
+    text-align: center;
+    margin-bottom: 30px;
+    text-shadow: 0 0 10px rgba(0, 168, 255, 0.3);
+}
+
+.controls {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(100px, 1fr));
+    gap: 10px;
+    margin-bottom: 20px;
+}
+
+.btn {
+    background: rgba(255, 255, 255, 0.1);
+    border: none;
+    padding: 12px;
+    border-radius: 10px;
+    color: var(--text-color);
+    font-size: 1rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+
+.btn:hover {
+    background: var(--button-hover);
+    transform: translateY(-2px);
+}
+
+.start { color: #4CAF50; }
+.stop { color: #f44336; }
+.reset { color: #ff9800; }
+.lap { color: #2196F3; }
+.popup { color: #9c27b0; }
+
+.format-selector {
+    margin: 20px 0;
+    text-align: center;
+}
+
+.format-selector select {
+    background: rgba(255, 255, 255, 0.1);
+    border: 1px solid rgba(255, 255, 255, 0.2);
+    padding: 8px;
+    border-radius: 5px;
+    color: var(--text-color);
+    margin-left: 10px;
+}
+
+.laps-container {
+    margin-top: 20px;
+    max-height: 200px;
+    overflow-y: auto;
+}
+
+.laps-list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+}
+
+.lap-item {
+    background: rgba(255, 255, 255, 0.05);
+    padding: 10px;
+    border-radius: 8px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.notification {
+    position: fixed;
+    top: 20px;
+    right: 20px;
+    padding: 15px 25px;
+    background: var(--accent-color);
+    border-radius: 8px;
+    transform: translateX(150%);
+    transition: transform 0.3s ease;
+}
+
+.notification.show {
+    transform: translateX(0);
+}
+
+@media (max-width: 480px) {
+    .time-display {
+        font-size: 2.5rem;
+    }
+    
+    .controls {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}

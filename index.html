@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>⚡ 高性能ストップウォッチ</title>
+    <link rel="stylesheet" href="style.css">
+    <link rel="manifest" href="manifest.json">
+    <script src="https://moment.github.io/luxon/global/luxon.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <div class="stopwatch-card">
+            <div class="time-display">
+                <span id="hours">00</span>:<span id="minutes">00</span>:<span id="seconds">00</span>.<span id="milliseconds">000</span>
+            </div>
+            <div class="controls">
+                <button id="startBtn" class="btn start">開始 ▶️</button>
+                <button id="stopBtn" class="btn stop">停止 ⏸</button>
+                <button id="resetBtn" class="btn reset">リセット 🔄</button>
+                <button id="lapBtn" class="btn lap">ラップ ⏱</button>
+                <button id="popupBtn" class="btn popup">ポップアップ 📋</button>
+            </div>
+            <div class="format-selector">
+                <label>表示形式:</label>
+                <select id="formatSelector">
+                    <option value="full">時:分:秒.ミリ秒</option>
+                    <option value="compact">分:秒.ミリ秒</option>
+                </select>
+            </div>
+            <div class="laps-container">
+                <h3>ラップタイム 📊</h3>
+                <div id="lapsDisplay" class="laps-list"></div>
+            </div>
+        </div>
+        <div id="notification" class="notification"></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
